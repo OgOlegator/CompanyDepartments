@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Department>
+
+@{
+    void ViewChilds(int parentId)
+    {
+        <ul>
+            @foreach (var department in Model.Where(x => x.IdParent == parentId))
+            {
+                <li>
+                    @if (Model.Any(x => x.IdParent == department.Id))
+                    {
+                        <a> 
+                            @department.Name (Сотрудников: @department.EmployeeCount) 
+                        </a>
+                        
+                        ViewChilds(department.Id);
+                    }
+                    else
+                    {
+                        <a class="nav-link text-blue" href="/Department/AddEmployee?id=@department.Id">
+                            @department.Name (Сотрудников: @department.EmployeeCount)
+                        </a>
+                    }
+                </li>
+            }
+        </ul>
+    }
+
+    ViewChilds(0);
+}
