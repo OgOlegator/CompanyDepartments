@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Department>
 
 @{
-    void ViewChilds(int parentId)
+    void ViewDepartmentTree(int parentId)
     {
         <ul>
             @foreach (var department in Model.Where(x => x.IdParent == parentId))
@@ -13,7 +13,7 @@
                             @department.Name (Сотрудников: @department.EmployeeCount) 
                         </a>
                         
-                        ViewChilds(department.Id);
+                        ViewDepartmentTree(department.Id);
                     }
                     else
                     {
@@ -26,5 +26,5 @@
         </ul>
     }
 
-    ViewChilds(0);
+    ViewDepartmentTree(0);
 }
