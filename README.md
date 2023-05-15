@@ -38,7 +38,7 @@
 Пример:
 
 "ConnectionStrings": {
-    "DefaultConnection": "Server=*(введите имя своего компьютера)\\SQLEXPRESS;Database=CompanyDepartments;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=true"
+    "DefaultConnection": "Server=*(введите имя своего компьютера)*\\SQLEXPRESS;Database=CompanyDepartments;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=true"
   }
   
 2) Ввести в консоли диспетчера пакетов:
