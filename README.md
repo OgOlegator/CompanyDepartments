@@ -18,5 +18,28 @@
 Необходимо реализовать:
 1) Хранение указанной структуры отделов и числа сотрудников в БД;
 2) Веб-приложение:
+
     а) Отображение иерархии отделов вместе с числом сотрудников;
+    
     б) При клике на название отдела увеличивать число сотрудников на 1.
+
+# Описание разработки
+
+В качестве БД используется MsSql.
+Для работы с БД используется ORM EntityFramework.
+
+Используемые NuGet пакеты:
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Tools
+
+Для создания БД нужно:
+1) Добавить ConnectionStrings в appsettings.json
+Пример:
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=*(введите имя своего компьютера)\\SQLEXPRESS;Database=CompanyDepartments;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=true"
+  }
+2) Ввести в консоли диспетчера пакетов:
+  Add-migration DbInitialize
+  Update-databse
+  
+Данные для начального заполнения БД см. в ApplicationDbContext
