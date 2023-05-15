@@ -34,8 +34,10 @@
 
 Для создания БД нужно:
 1) Добавить ConnectionStrings в appsettings.json
+
 Пример:
-  "ConnectionStrings": {
+
+"ConnectionStrings": {
     "DefaultConnection": "Server=*(введите имя своего компьютера)\\SQLEXPRESS;Database=CompanyDepartments;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=true"
   }
 2) Ввести в консоли диспетчера пакетов:
